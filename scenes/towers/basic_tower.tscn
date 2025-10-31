@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8hp3miu86lc3"]
+
+[ext_resource type="Texture2D" uid="uid://0vk3y82we3sd" path="res://icon.svg" id="1_eidq4"]
+[ext_resource type="Script" uid="uid://b6jyikfna77ow" path="res://scripts/towers/basic_tower.gd" id="1_g4jmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4jmr"]
+size = Vector2(83, 219)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsqs5"]
+radius = 392.12753
+
+[node name="basic_tower" type="Area2D" groups=["towers"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_g4jmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.48437497, 1.46875)
+texture = ExtResource("1_eidq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g4jmr")
+
+[node name="RangeIndicator" type="Sprite2D" parent="."]
+
+[node name="TowerTop" type="Sprite2D" parent="."]
+position = Vector2(1, -116.00001)
+scale = Vector2(0.484375, 0.3671875)
+texture = ExtResource("1_eidq4")
+
+[node name="ShootPoint" type="Marker2D" parent="TowerTop"]
+position = Vector2(-2.064516, 5.446808)
+scale = Vector2(2.064516, 2.7234042)
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_fsqs5")
+debug_color = Color(0.78039217, 0.4392157, 0, 0.16470589)

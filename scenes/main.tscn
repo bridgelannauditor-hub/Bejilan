@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cocm63o3iexll"]
+
+[ext_resource type="Script" uid="uid://t3ah6tu86fxq" path="res://scripts/main.gd" id="1_o5qli"]
+
+[sub_resource type="Curve2D" id="Curve2D_sugp2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -274.42276, 496, 0, 0, 0, 0, 373.6006, 473, 0, 0, 0, 0, 552.7726, 291, 0, 0, 0, 0, 529.913, -79.952385)
+}
+point_count = 4
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(937, 253)
+zoom = Vector2(0.755, 0.755)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(652, 52)
+scale = Vector2(1.8810552, 1.0243902)
+curve = SubResource("Curve2D_sugp2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-274.42276, 496)
+rotation = -0.035477657
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
